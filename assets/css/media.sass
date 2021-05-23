@@ -1,0 +1,53 @@
+$primary-color: #333333
+$dark-color: #000
+$gray-color: #606060
+$lightGray-color: #E5E5E5
+$light-color: #f2f2f2
+$white-color: #fff
+$mute-color: rgba(#c4c4c4, 0.5)
+$red-color: #F55C47
+$orange-color: #F69047
+$mediumOrange-color: #FFA96C
+$lightOrange-color: #FFC296
+$green-color: #4AA96C
+$shadow: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
+$vvsm-margin: 5px
+$vsm-margin: 10px
+$sm-margin: 15px
+$md-margin: 30px
+$lg-margin: 45px
+
+$debug: 1px solid red
+
+
+@media screen and (max-width: 991px) 
+    nav
+        z-index: 1
+        position: relative
+        .nav-wrapper
+            display: flex
+            ul 
+                display: none
+                justify-content: center
+                flex-direction: column
+                position: absolute
+                top: 0
+                right: 0
+                z-index: 1
+                width: 70vw
+                height: 100vh
+                filter: $shadow
+                    // transition: 400ms
+                // animation: showNav 500ms
+                background: $primary-color
+                li 
+                    text-align: center
+                    padding: 2em
+                    a 
+                        font-size: 18px 
+                        text-align: center
+                        color: $white-color
+                    
+            .humburger 
+                display: block!important
+    

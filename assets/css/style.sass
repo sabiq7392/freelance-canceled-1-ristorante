@@ -1,0 +1,251 @@
+$primary-color: #333333
+$dark-color: #000
+$gray-color: #606060
+$lightGray-color: #E5E5E5
+$light-color: #f2f2f2
+$white-color: #fff
+$mute-color: rgba(#c4c4c4, 0.5)
+$red-color: #F55C47
+$orange-color: #F69047
+$mediumOrange-color: #FFA96C
+$lightOrange-color: #FFC296
+$green-color: #4AA96C
+$shadow: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
+$vvsm-margin: 5px
+$vsm-margin: 10px
+$sm-margin: 15px
+$md-margin: 30px
+$lg-margin: 45px
+
+$debug: 1px solid red
+
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap')
+
+
+* 
+    padding: 0
+    margin: 0
+    box-sizing: 0
+    text-decoration: none
+    font-family: 'Nunito', sans-serif
+    list-style-type: none
+    
+html
+    scroll-behavior: smooth
+
+body
+    
+
+.body-form
+    display: flex
+    flex-direction: column
+    background-image: url(/assets/img/main-background.jpg)
+    background-repeat: no-repeat
+    background-size: cover
+
+// ================ Navbar ==================
+nav 
+    z-index: 1
+    background-color: $primary-color
+    .nav-wrapper
+        display: flex
+        justify-content: space-between
+        max-width: 1150px
+        padding: 20px
+        margin: auto
+        ul 
+            display: flex
+            align-items: center
+            list-style: none
+            li 
+                &:nth-child(4)
+                    .nav-link
+                        background-color: $red-color
+                        border-radius: 5px
+                        color: $white-color
+                        &:hover
+                            color: $white-color
+                            filter: brightness(90%)
+                    
+                .nav-link
+                    font-weight: 600
+                    padding: 0.5em 1.5em
+                    transition: 400ms
+                    font-size: 18px
+                    color: #c4c4c4
+                    &:hover
+                        color: $red-color
+
+        .humburger 
+            display: none
+            position: relative
+            cursor: pointer
+            z-index: 5
+            .line-wrapper 
+                transform: translateY(10px)
+                .line 
+                    width: 25px
+                    height: 4px
+                    transition: width 400ms
+                    border-radius: 15%
+                    background-color: $red-color
+                    &:nth-child(2) 
+                        margin: 7px 0
+
+// =========== Sign In
+
+.myContainer
+    display: flex
+    align-items: center
+    height: 100vh
+.card-form
+    display: flex
+    flex-direction: column
+    margin: auto
+    background: $light-color
+    width: 370px
+    padding: 3em 0.5em
+    border-radius: 10px
+    header
+        text-align: center
+        h1 
+            margin-top: 30px
+            margin-bottom: 15px
+            font-size: 24px
+            font-weight: bold
+            color: $red-color
+
+    .input-wrapper
+        display: flex
+        flex-direction: column
+        align-items: center
+        .forget-signUp
+            margin-top: 10px
+            width: 240px
+            display: flex
+            justify-content: space-between
+            a
+                color: $red-color
+                &:nth-child(1)
+                
+                
+
+
+
+
+
+// =========== Input Controller
+
+input 
+    font-size: 16px!important
+    transition: 200ms
+    border-radius: 30px!important
+    margin-top: $vsm-margin
+    border: none!important
+
+input:focus
+    border: 1px solid $orange-color
+    outline: 0 none
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.015) inset, 0 0 4px $red-color
+
+input::placeholder 
+    font-size: 16px
+
+input[type=submit] 
+    width: 272px!important
+    transition: 0.2s
+    color: white
+    background: $red-color
+    font-size: 18px!important
+
+input[type=submit]:hover 
+    color: white
+    filter: brightness(90%)
+    box-shadow: $shadow
+    cursor: pointer
+
+input[type=text], 
+input[type=number], 
+input[type=email], 
+input[type=password], 
+input[type=submit] 
+    height: 45px!important
+    width: 240px
+    
+input[type=text], 
+input[type=number], 
+input[type=email], 
+input[type=password]
+    background-color: $mute-color
+    padding: 0 1em
+
+.show-nav
+    display: flex!important
+    animation: showNav 400ms!important
+
+.d-none
+    display: none!important
+
+.hideNav
+    animation: hideNav 400ms!important
+
+.invert-rotated, 
+.rotated
+    transition: 100ms!important
+    width: 30px!important
+
+.invert-rotated
+    transform: rotate(-45deg)
+
+.rotated
+    transform: rotate(45deg)
+    top: 0
+    position: absolute
+
+.stay-position
+    transform: translateY(20px)!important
+
+.active
+    color: $red-color!important
+    font-weight: bold!important
+    
+@keyframes showNav 
+    0% 
+        opacity: 0
+        top: -500px
+    
+    90% 
+        opacity: 1
+    
+    100% 
+        top:  0
+
+@keyframes hideNav
+    0%
+        right: 0
+        
+    100%
+        right: -1000px
+
+@keyframes move-to-right
+    0%
+        opacity: 0
+        left: -500px
+
+    50%
+        opacity: 0
+
+    90% 
+        opacity: 1
+    
+    100%
+        left: 0
+
+@keyframes move-to-left
+    0%
+        right: -500px
+        
+    100%
+        right: 0px
+
